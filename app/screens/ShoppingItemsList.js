@@ -1,5 +1,6 @@
 import React from 'react'
-import {View,Text,FlatList} from 'react-native'
+
+import {View,FlatList} from 'react-native'
 import ShoppingItem from '../ShoppingItem';
 
 const dataSource=[
@@ -30,22 +31,37 @@ const dataSource=[
 
 
 ]
+
+
+
 export default class ShoppingItemsList extends React.Component{
 
 render(){
 
     return(
 
+        <View>
+            <FlatList 
+             // horizontal={true}
+         
+             data={dataSource}
+             renderItem={({item}) =>(
+                  <ShoppingItem navigation={this.props.navigation} Item={item} />
+               )} 
+             />
+    
+
+        </View>
+        
+ 
+ 
+       
+ 
+
         
 
-        <FlatList 
-       
 
-        data={dataSource}
-        renderItem={({item}) =>(
-             <ShoppingItem navigation={this.props.navigation} Item={item} />
-          )} 
-        />
+      
     )
 }
 

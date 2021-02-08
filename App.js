@@ -24,13 +24,19 @@ import HomeScreen from './app/home'
 import LoginForm from './app/screens/LoginScreen'
 import ShoppingItemsList from './app/screens/ShoppingItemsList'
 import ItemDetails from './app/ItemDetails'
+import TabNav from './app/TabNavigation'
+
 
 const Stack = createStackNavigator();
+
 
 const App = () => {
 
 
   return (
+
+
+   
 
     <NavigationContainer>
       
@@ -41,7 +47,10 @@ const App = () => {
           options={{ title: 'Welcome' }}
         />
         <Stack.Screen name="LogIn" component={LoginForm} options = {{title: 'Back'}} />
-        <Stack.Screen name = 'ShoppingItemsList' component={ShoppingItemsList}/>
+        <Stack.Screen name = 'ShoppingItemsList' component={ShoppingItemsList}/> 
+        <Stack.Screen name="TabNav" component={TabNav}    options={{ title: 'home',    headerLeft: null }}
+ />
+
         <Stack.Screen name='ItemDetails' component={ItemDetails}/>
       </Stack.Navigator>
     </NavigationContainer>
