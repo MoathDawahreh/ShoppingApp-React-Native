@@ -6,6 +6,7 @@ import ProfileScreen from './ProfileScreen'
 import ShoppingItemsList from '../app/screens/ShoppingItemsList'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useIsFocused} from '@react-navigation/native';
+import { color } from 'react-native-reanimated';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,10 +22,14 @@ render(){
     return(
 
       
-        <Tab.Navigator >
+        <Tab.Navigator
+        tabBarOptions={{
+        activeTintColor: "red",
+        }}
+          >
         <Tab.Screen name="Shope" component={ShoppingItemsList}
          options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Explore',
           tabBarIcon: () => (
             <Image style={styles.img} source={require('./assets/shopping.png')} />
           ),
@@ -35,7 +40,7 @@ render(){
         <Tab.Screen name="Settings" component={ProfileScreen} 
           options={{
             tabBarLabel: 'Profile',
-            tabBarIcon: ({ color, size }) => (
+            tabBarIcon: () => (
               <Image style={styles.img} source={require('./assets/profile.png')} />
             ),
             }} />

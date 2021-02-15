@@ -21,40 +21,75 @@ export default class LoginBtn  extends Component{
 
     }
 
-    //  Login = async () => {
-    //     try {
+     Login = async () => {
+        try {
 
 
         
     
-    //         let response = await fetch('https://reqres.in/api/users?page=2')
+            let response = await fetch('https://reqres.in/api/users?page=2')
             
-    //         let users = await response.json()
-    //         this.setState({FData: users})
+            let users = await response.json()
+            this.setState({FData: users})
              
-    //         console.log("users", this.state.FData)
+            console.log("users", this.state.FData)
 
     
-    //          if ( Object.keys(users.data).find(key => users.data[key].first_name == this.props.UName && users.data[key].id == this.props.pwd )  ) {
+             if ( Object.keys(users.data).find(key => users.data[key].first_name == this.props.UName && users.data[key].id == this.props.pwd )  ) {
 
 
 
-    //             console.log("MAtcheeeed!",this.state.UName)
+                console.log("MAtcheeeed!",this.state.UName)
 
-    //             this.props.navigation.navigate("TabNav")
+                this.props.navigation.navigate("TabNav")
 
-    //          }else{
-    //              console.log("oops wrong password or whatever!")
-    //          }    
+             }else{
+                 console.log("oops wrong password or whatever!")
+             }    
              
     
-    //       return users.data;
+          return users.data;
 
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    
+
+
+    //  Login = async () => {
+
+
+    //     try {
+
+    //         const requestOptions = {
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify( {
+    //                 "name" : "eeerrrrrtt",
+    //                 "pwd" : "32323"
+    //                })
+    //         };
+
+    //         console.log(requestOptions)
+
+
+        
+    
+    //         const response = await fetch('https://localhost:4000/add-user',requestOptions)
+            
+    //         const data = await response.json();
+    //         return data
+   
+
+
+ 
     //     } catch (error) {
     //       console.error(error);
+    //       throw error;
+
     //     }
     //   };
-    
 
     
     render(){
