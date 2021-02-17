@@ -4,15 +4,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Image,StyleSheet,Dimensions} from 'react-native'
 import ProfileScreen from './ProfileScreen'
 import ShoppingItemsList from '../app/screens/ShoppingItemsList'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useIsFocused} from '@react-navigation/native';
 import { color } from 'react-native-reanimated';
 
 const Tab = createBottomTabNavigator();
 
 export default class TabNav extends React.Component{
-
-
 
 render(){
 
@@ -21,7 +18,6 @@ render(){
 
     return(
 
-      
         <Tab.Navigator
         tabBarOptions={{
         activeTintColor: "red",
@@ -45,7 +41,6 @@ render(){
             ),
             }} />
       </Tab.Navigator>
-
 
       
     )

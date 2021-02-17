@@ -35,10 +35,7 @@ const App = () => {
 
   return (
 
-
-   
-
-    <NavigationContainer>
+      <NavigationContainer>
       
       <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
@@ -47,7 +44,7 @@ const App = () => {
           options={{ title: 'Welcome' }}
         />
         <Stack.Screen name="LogIn" component={LoginForm} options = {{title: 'Back'}} />
-        <Stack.Screen name = 'ShoppingItemsList' component={ShoppingItemsList}/> 
+        {/* <Stack.Screen name = 'ShoppingItemsList' component={ShoppingItemsList}/>  */}
         <Stack.Screen name="TabNav" component={TabNav}    options={{ title: 'home',    headerLeft: null }}
  />
 
