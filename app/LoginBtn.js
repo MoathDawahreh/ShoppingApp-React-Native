@@ -38,7 +38,7 @@ export default class LoginBtn  extends Component{
                 console.log("MAtcheeeed!",this.state.UName)
 
                 this.props.navigation.navigate("TabNav")
-Li
+
              }else{
                  console.log("oops wrong password or whatever!")
              }    
@@ -58,7 +58,7 @@ Li
         return(
             <TouchableOpacity 
             style={{ width:0.9*width,height:0.1*height,backgroundColor:"black",flexDirection:'row',justifyContent:'center',alignItems:'center'}}
-            onPress={this.log}>
+            onPress={this.Login}>
             <Text style={{color:"white",fontWeight:'600',fontSize:18,}}>logIn</Text>
             </TouchableOpacity>
             )
